@@ -136,6 +136,23 @@ The script should then prompt you for the MySQL root password and an Administrat
 
 When the setup is complete, you will be able to access the system at `http://<your-server-ip>`, wherein you can use the administrator password to login.
 
+### Revert to Older Version Tags
+
+Do you have Frappe and ERPnext installed already?
+
+If so, do some git checkout on both of the applications.
+
+Navigate to both Frappe and ERPnext
+
+$ git fetch --all --tags --prune
+$ git checkout tags/v(7.2.22/or any)
+
+Then run the following commands in frappe-bench directory:
+
+$ bench build
+$ bench migrate
+$ bench restart
+
 #### Troubleshooting
 
 In case the setup fails, the log file is saved under `/tmp/logs/install_bench.log`. You may then:
