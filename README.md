@@ -78,6 +78,7 @@ Download the Easy Install script and execute it:
 ```sh
 $ wget https://raw.githubusercontent.com/flexcomng/bench/develop/install.py
 $ export LC_ALL=C.UTF-8
+$ export LANG=C.UTF-8
 $ python3 install.py --production
 ```
 
@@ -93,14 +94,16 @@ If so, do some git checkout on both of the applications.
 
 Navigate to both Frappe and ERPnext
 
+```sh
 $ git fetch --all --tags --prune
 $ git checkout tags/v(7.2.22/or any)
-
+```
 Then run the following commands in frappe-bench directory:
-
+```sh
 $ bench build
 $ bench migrate
 $ bench restart
+```
 
 #### Troubleshooting
 
